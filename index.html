@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>SATOR</title>
+    <link href="./css/sator.css" rel="stylesheet" >
+    <script src="./js/sator.js" defer></script>
+    <link rel="icon" href="./img/logo.png" />
+  </head>
+
+  <body>
+    <form>
+      <fieldset id="skill" class="gridInputs">
+        <legend>S (Skill) <span class="typeIcon">🎓</span></legend>
+
+        <label for="0">
+          <input type="radio" name="pilotSkill" id="0" value="0" >
+          0
+        </label>
+        <label for="1">
+          <input type="radio" name="pilotSkill" id="1" value="1" >
+          1
+        </label>
+        <label for="2">
+          <input type="radio" name="pilotSkill" id="2" value="2" >
+          2
+        </label>
+        <label for="3">
+          <input type="radio" name="pilotSkill" id="3" value="3" >
+          3
+        </label>
+        <label for="4">
+          <input type="radio" name="pilotSkill" id="4" value="4" >
+          4
+        </label>
+        <label for="5">
+          <input type="radio" name="pilotSkill" id="5" value="5" >
+          5
+        </label>
+      </fieldset>
+      <fieldset id="attack" class="gridInputs threeColGrid">
+        <legend>
+          A (Attacker movement modifiers) <span class="typeIcon">⚔️</span>
+        </legend>
+        <label for="groundMove">
+          <input type="radio" name="attack" id="groundMove" value="0" >
+          <div>
+            0 
+          </div>
+          move
+        </label>
+        <label for="standstill">
+          <input type="radio" name="attack" id="standstill" value="-1" >
+          <div>
+            -1 
+          </div>
+            standstill
+        </label>
+        <label for="jumping">
+          <input type="radio" name="attack" id="jumping" value="+2" >
+          <div>
+            2 
+          </div>
+           jumped
+        </label>
+      </fieldset>
+      <fieldset id="target">
+        <legend>T (Target) <span class="typeIcon">🎯</span></legend>
+        <label class="sectionLabel">TMM</label>
+        <div class="gridInputs fiveColGrid">
+          <label>
+            0 <div>
+              <input type="radio" name="TMM" value="0" >
+            </div>  
+            <span class="hideOnCheck">
+              standstill
+            </span>
+          </label>
+          <label>
+            <input type="radio" name="TMM" value="1" >
+            +1
+          </label>
+          <label>
+            <input type="radio" name="TMM" value="2" >
+            +2
+          </label>
+          <label>
+            <input type="radio" name="TMM" value="3" >
+            +3
+          </label>
+          <label>
+            <input type="radio" name="TMM" value="4" >
+            +4
+          </label>
+        </div>
+        <div class="flexInputs">
+          <label class="radioLabel">
+            +1 Jumping
+            <input
+              type="checkbox"
+              id="jumping_t"
+              value="1"
+              name="other"
+            >
+          </label>
+          <label class="radioLabel">
+            -4 Immobile
+            <input
+              type="checkbox"
+              id="immobile_t"
+              value="-4"
+              name="other"
+            >
+          </label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>O (Other) <span class="typeIcon">🗑️</span></legend>
+        <input type="number" placeholder="0" >
+      </fieldset>
+      <fieldset id="range" class="gridInputs threeColGrid">
+        <legend>R (Range) <span class="typeIcon">📏</span></legend>
+        <label for="short">
+          <input type="radio" name="range" id="short" value="0" >
+          +0
+          <br >
+          Short
+        </label>
+        <label for="medium">
+          <input type="radio" name="range" id="medium" value="2" >
+          +2
+          <br >
+          Medium
+        </label>
+        <label for="long">
+          <input type="radio" name="range" id="long" value="4" >
+          +4
+          <br >
+          Long
+        </label>
+      </fieldset>
+    </form>
+    <footer>
+      +<span id="total">0</span>
+      <table>
+        <thead>
+          <tr>
+            <th>S</th>
+            <th>A</th>
+            <th>T</th>
+            <th>O</th>
+            <th>R</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="s">0</td>
+            <td id="a">0</td>
+            <td id="t">0</td>
+            <td id="o">0</td>
+            <td id="r">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </footer>
+  </body>
+</html>

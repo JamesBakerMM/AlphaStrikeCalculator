@@ -1,0 +1,209 @@
+:root {
+    --white: hsl(90 3% 92%);
+    --grey: hsl(120 6% 80%);
+    --darkRed: hsl(3 88% 20%);
+    --midRed: hsl(15 90% 36%);
+    --lightRed: hsl(26 12% 80%);
+    --cornerRad: 5px;
+    --gap: 20px;
+    font-size: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--grey);
+    margin: 0;
+}
+
+fieldset {
+    background-color: var(--white);
+    border-radius: var(--cornerRad);
+    max-width: 500px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-inline: auto;
+    font-size: 0.75rem;
+    position: relative;
+    border: 5px solid var(--darkRed);
+    gap: var(--gap);
+}
+
+legend {
+    padding: 0.25rem;
+    color: var(--white);
+    background-color: var(--darkRed);
+    width: 100%;
+    padding-left: 2rem;
+    position: sticky;
+    clip-path: polygon(5% 0, 100% 0, 100% 80%, 95% 100%, 0 100%, 0 25%);
+}
+
+.typeIcon {
+    margin-left: -1.5rem;
+    float: left;
+    font-size: 1.5rem;
+}
+
+legend::first-letter {
+    font-size: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 1rem;
+    background-color: var(--midRed);
+    transition: transform 0.2s, border-radius 0.5s;
+}
+
+.sectionLabel {
+    font-size: 1.25rem;
+    color: var(--white);
+    height: 2rem;
+    padding-left: 0.5rem;
+}
+
+.radioLabel {
+    font-size: 1.25rem;
+    color: var(--white);
+    height: 2rem;
+    padding-left: 0.5rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    float: left;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+input[type="text"] {
+    display: block;
+}
+
+.gridInputs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: var(--gap);
+    grid-row-gap: var(--gap);
+}
+
+.threeColGrid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.fiveColGrid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.gridInputs input[type="radio"] {
+    display: none;
+    background-color: var(--midRed);
+    /* transform:scale(2); */
+}
+
+.gridInputs label,
+#attack label,
+#range label {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: var(--lightRed);
+    min-height: 4rem;
+}
+
+#skill label:has(input[type="radio"]:checked),
+#target label:has(input[type="radio"]:checked) {
+    aspect-ratio: 1/1;
+    color: var(--white);
+    border: 2px var(--white) solid;
+    background-color: var(--darkRed);
+    border-radius: 50%;
+    /* width: 50%; */
+    padding-top: 0.9rem;
+    transform: scale(1.75);
+    /* translate: 50%; */
+}
+#range input[type="radio"],
+#attack input[type="radio"],
+#target input[type="radio"] {
+    display: none;
+}
+
+#attack label:has(input[type="radio"]:checked),
+#range label:has(input[type="radio"]:checked) {
+    color: var(--white);
+    border: 2px var(--white) solid;
+    background-color: var(--darkRed);
+}
+
+input[type="number"] {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 1rem;
+}
+
+.hideOnCheck {
+    opacity: 100;
+}
+
+label:has(input[type="radio"]:checked) .hideOnCheck {
+    display: none;
+}
+
+#range {
+    margin-bottom: 10vh;
+}
+
+form {
+    accent-color: var(--darkRed);
+}
+
+footer {
+    font-family: monospace;
+    display: block;
+    margin: auto;
+    font-size: 1.5rem;
+    background-color: var(--white);
+    text-align: center;
+    min-height: 4rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+footer table td,
+footer table th {
+    color: var(--midRed);
+    font-size: 0.8rem;
+    font-weight: 900;
+    width: 2ch;
+}
+
+footer table td:nth-child(odd) {
+    color: var(--darkRed);
+    opacity: 0.6;
+}
+
+footer #total {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.flexInputs {
+    display: flex;
+    gap: var(--gap);
+}
+
+.flexInputs label {
+    flex: 1;
+}
